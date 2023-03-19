@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(244, 238, 225);
+}
+
+h2 {
+    justify-self: center;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.batery {
+    width: 200px;
+    height: 70px;
+    border: 1px solid black;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+
+.batery:before {
+    content: '';
+    width: 0;
+    height: 100px;
+    background: red;
+    position: absolute;
+    animation: fill 10s infinite linear, color 10s infinite ease-out;
+}
+
+h2::before {
+    content: 'Bateria Fraca';
+    animation: level 10s infinite ease;
+}
+
+@keyframes fill {
+
+    0%,
+    5%,
+    100% {
+        width: 0px;
+    }
+
+    50%,
+    55% {
+        width: 100%;
+    }
+}
+
+@keyframes color {
+
+    0%,
+    20%,
+    100% {
+        background: red;
+    }
+
+    39%,
+    79% {
+        background: yellow;
+    }
+
+    60% {
+        background: green;
+    }
+}
+
+@keyframes level {
+
+    0%,
+    20%,
+    100% {
+        content: 'Bateria Fraca';
+    }
+
+    21%,
+    39%,
+    61%,
+    79% {
+        content: 'Normal';
+    }
+
+    40%,
+    60% {
+        content: 'Bateria Cheia';
+    }
+}
+
+.tip {
+    height: 20px;
+    width: 10px;
+    background: black;
+    border-radius: 0 50% 50% 0;
+    margin-left: 5px;
+}
